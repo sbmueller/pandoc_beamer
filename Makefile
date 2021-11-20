@@ -2,7 +2,7 @@ FILENAME = slides
 ASP ?= 43
 
 define run_pandoc
-	pandoc -t beamer -s --toc --filter pandoc-citeproc $(2) -V theme=metropolis -V colortheme=$(3) --template=template.beamer --variable aspectratio=${ASP} --variable navigation=horizontal ${FILENAME}.md -o ${FILENAME}.$(1)
+	pandoc -t beamer -s --toc --citeproc $(2) -V theme=metropolis -V colortheme=$(3) --template=template.beamer --variable aspectratio=${ASP} --variable navigation=horizontal ${FILENAME}.md -o ${FILENAME}.$(1)
 endef
 
 ${FILENAME}.pdf: ${FILENAME}.md
