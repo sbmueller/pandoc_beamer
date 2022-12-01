@@ -2,18 +2,19 @@
 title: "Title"
 subtitle: "Subtitle"
 author:
-- Author 1
-- Author 2
+  - Author 1
+  - Author 2
 ...
 
-
 ## Picture
+
 <!--\begin{figure}-->
 <!--\begin{center}-->
 <!--\includegraphics[width=0.8\textwidth]{Git-logo.pdf}-->
 <!--\caption{The git logo}-->
 <!--\end{center}-->
 <!--\end{figure}-->
+
 ![The `git` logo](Git-logo.pdf){#git-logo}
 
 See Fig. \ref{git-logo} for the Git logo.
@@ -21,6 +22,7 @@ See Fig. \ref{git-logo} for the Git logo.
 # Section 1
 
 ## Columns
+
 \colA{0.3\textwidth}
 Working directory
 
@@ -59,9 +61,9 @@ Transitions between them happen with \cite{dijkstra1959note}.
 \begin{figure}
 \begin{tikzpicture}
 \begin{axis}[xlabel=Xlabel,ylabel=Ylabel,height=0.95\textheight,width=\textwidth,
-             grid=major, grid style={line width=.1pt, draw=fg!90!bg},
-             legend style={fill=bg,font=\small}, label style={font=\small},
-             tick label style={font=\tiny}]
+grid=major, grid style={line width=.1pt, draw=fg!90!bg},
+legend style={fill=bg,font=\small}, label style={font=\small},
+tick label style={font=\tiny}]
 \addplot table [x=a, y=b, col sep=comma,cyan]{data.csv};
 \addplot table [x=a, y=c, col sep=comma,lime]{data.csv};
 \addlegendentry{Approach 1}
@@ -69,7 +71,6 @@ Transitions between them happen with \cite{dijkstra1959note}.
 \end{axis}
 \end{tikzpicture}
 \end{figure}
-
 
 ## Git trees with Tikz
 
@@ -111,4 +112,5 @@ Transitions between them happen with \cite{dijkstra1959note}.
 - The feauture commit hash has changed to \textcolor{red}{48ca048}!
 
 ## {.standout}
+
 Thank you!
