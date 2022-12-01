@@ -1,4 +1,6 @@
 ---
+colortheme: "owl" # or default
+aspectratio: 169 # or 43
 title: "Title"
 subtitle: "Subtitle"
 author:

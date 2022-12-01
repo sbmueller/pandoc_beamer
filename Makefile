@@ -1,22 +1,17 @@
 FILENAME = slides
-ASP ?= 43
 
 define run_pandoc
-	pandoc -t beamer -s --toc --citeproc $(2) -V theme=metropolis -V colortheme=$(3) --template=template.beamer --variable aspectratio=${ASP} --variable navigation=horizontal ${FILENAME}.md -o ${FILENAME}.$(1)
+	pandoc -t beamer -s --toc --citeproc $(2) -V theme=metropolis --template=template.beamer --variable navigation=horizontal ${FILENAME}.md -o ${FILENAME}.$(1)
 endef
 
 ${FILENAME}.pdf: ${FILENAME}.md
-	$(call run_pandoc,pdf,,owl)
+	$(call run_pandoc,pdf,)
 
 tex: ${FILENAME}.md
-	$(call run_pandoc,tex,,owl)
-
-light:
-	$(call run_pandoc,pdf,,default)
+	$(call run_pandoc,tex,)
 
 withbib:
-	# takes super long
-	$(call run_pandoc,tex,--biblatex --bibliography=${FILENAME}.bib,owl)
+	$(call run_pandoc,tex,--biblatex --bibliography=${FILENAME}.bib)
 	latexmk -pdf ${FILENAME}.tex
 	rm ${FILENAME}.tex
 	rm *.aux
